@@ -15,10 +15,10 @@ fieldForm.addEventListener('submit', (event)=>{
     let gridWidth = Number(difficulties.value);
     let cellsNum = gridWidth * gridWidth;
     if(!fieldForm.classList.contains('generated')){
-        resetGrid();
         generateGrid(cellsNum, fieldForm);
         generateNumbersWidth(boxes, gridWidth);
     }
+    
     
 });
 
@@ -33,6 +33,7 @@ difficulties.addEventListener('input', ()=>{
 
 
 function generateGrid(cellsNum, domEl){
+    resetGrid();
     for (let i = 1; i <= cellsNum; i++){
         let boxEl = document.createElement('div');
         boxEl.classList.add('box');
@@ -58,10 +59,10 @@ function generateNumbersWidth(domElements, rowNum){
 
 
 function resetGrid() {
-    for(let i = 0; i < boxes.length; i++){
-        boxes.splice(i,1);
+    for(let i = boxes.length - 1; i >= 0; i--){
+        boxes[i].remove();
     }
-    
+    console.log(boxes);
 }
 
 
