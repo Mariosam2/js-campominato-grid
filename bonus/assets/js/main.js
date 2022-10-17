@@ -50,7 +50,7 @@ function generateNumbersWidth(domElements, rowNum){
         element.style.width =`calc(100%/${rowNum})`
         element.addEventListener('click', ()=>{
             //console.log(this);
-            //console.log(element.innerText);
+            console.log(element.innerText);
             element.classList.toggle('clicked');
         })
     }
