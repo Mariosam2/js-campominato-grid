@@ -4,8 +4,9 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 
 const container = document.querySelector('.container');
 const button = document.getElementById('generate')
+let boxes = [];
 const difficulties = document.getElementById('difficulties');
-console.log(container);
+//console.log(container);
 
 
 
@@ -15,7 +16,12 @@ button.addEventListener('click', ()=>{
     let cellsNum = gridWidth * gridWidth;
     if(!container.classList.contains('generated')){
         generateGrid(cellsNum, container);
+        boxes = document.querySelectorAll('.box');
         generateNumbersWidth(boxes, gridWidth);
+
+        
+    } else {
+        
     }
     
 })
@@ -27,17 +33,18 @@ difficulties.addEventListener('input', ()=>{
 
 
 
-const boxes = document.querySelectorAll('div.box');
+
 
 
 function generateGrid(cellsNum, domEl){
+    resetGrid();
     for (let i = 1; i <= cellsNum; i++){
         let boxEl = document.createElement('div');
         boxEl.classList.add('box');
+        //console.log(boxEl);
         domEl.insertAdjacentElement('afterbegin', boxEl)
     }
     domEl.classList.add('generated');
-    console.log(boxes)
     
 }
 
@@ -45,7 +52,8 @@ function generateNumbersWidth(domElements, rowNum){
     for(let i = 0; i < domElements.length; i++){
         let number = i;
         let element = domElements[i];
-        console.log(element, i);
+        //console.log(domElements);
+        //console.log(element, i);
         element.innerText = ++number;
         element.style.width =`calc(100%/${rowNum})`
         element.addEventListener('click', ()=>{
@@ -63,6 +71,7 @@ function resetGrid() {
     for(let i = boxes.length - 1; i >= 0; i--){
         boxes[i].remove();
     }
+    console.log(boxes);
    
 }
 
