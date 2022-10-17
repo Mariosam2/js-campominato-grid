@@ -11,8 +11,11 @@ console.log(fieldForm);
 
 fieldForm.addEventListener('submit', (event)=>{
     event.preventDefault();
-    generateGrid(100, fieldForm);
-    generateNumbers(boxes);
+    if(!fieldForm.classList.contains('generated')){
+        generateGrid(100, fieldForm);
+        generateNumbers(boxes);
+    }
+    
 });
 
 
@@ -23,6 +26,7 @@ function generateGrid(cellsNum, domEl){
         boxEl.classList.add('box');
         domEl.insertAdjacentElement('afterbegin', boxEl)
     }
+    domEl.classList.add('generated');
 }
 
 function generateNumbers(domElements){
@@ -31,7 +35,9 @@ function generateNumbers(domElements){
         let element = domElements[i];
         element.innerText = ++number;
         element.addEventListener('click', ()=>{
-            console.log(this.innerText);
+            console.log(this);
+            console.log(element.innerText);
+            element.classList.toggle('clicked');
         })
     }
 
