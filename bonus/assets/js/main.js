@@ -15,11 +15,20 @@ fieldForm.addEventListener('submit', (event)=>{
     let gridWidth = Number(difficulties.value);
     let cellsNum = gridWidth * gridWidth;
     if(!fieldForm.classList.contains('generated')){
+        resetGrid();
         generateGrid(cellsNum, fieldForm);
         generateNumbersWidth(boxes, gridWidth);
     }
     
 });
+
+
+difficulties.addEventListener('input', ()=>{
+    fieldForm.classList.remove('generated');
+});
+
+
+
 
 
 
@@ -45,6 +54,14 @@ function generateNumbersWidth(domElements, rowNum){
         })
     }
 
+}
+
+
+function resetGrid() {
+    for(let i = 0; i < boxes.length; i++){
+        boxes.splice(i,1);
+    }
+    
 }
 
 

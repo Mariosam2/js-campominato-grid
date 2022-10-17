@@ -4,7 +4,6 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 
 const fieldForm = document.getElementById('form');
 const boxes = document.getElementsByClassName('box');
-const difficulties = document.getElementById('difficulties');
 //console.log(fieldForm);
 
 
