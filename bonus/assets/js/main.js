@@ -5,16 +5,18 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 const fieldForm = document.getElementById('form');
 const boxes = document.getElementsByClassName('box');
 const difficulties = document.getElementById('difficulties');
-//console.log(fieldForm);
+console.log(fieldForm);
 
 
 
 
 fieldForm.addEventListener('submit', (event)=>{
     event.preventDefault();
+    let gridWidth = Number(difficulties.value);
+    let cellsNum = gridWidth * gridWidth;
     if(!fieldForm.classList.contains('generated')){
-        generateGrid(100, fieldForm);
-        generateNumbersWidth(boxes, 10);
+        generateGrid(cellsNum, fieldForm);
+        generateNumbersWidth(boxes, gridWidth);
     }
     
 });
@@ -38,7 +40,7 @@ function generateNumbersWidth(domElements, rowNum){
         element.style.width =`calc(100%/${rowNum})`
         element.addEventListener('click', ()=>{
             //console.log(this);
-            console.log(element.innerText);
+            //console.log(element.innerText);
             element.classList.toggle('clicked');
         })
     }
