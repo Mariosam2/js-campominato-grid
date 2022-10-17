@@ -3,3 +3,36 @@
     margin: 0;
     padding: 0;
 }
+
+.container {
+    width: 80%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+#form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: black;
+    width: calc(100%/10);
+    aspect-ratio: 1/1;
+    border: 1px solid white;
+}
+
+#form .generate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+#form .generate input[type="submit"]{
+    font-size: 2rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+}
+
