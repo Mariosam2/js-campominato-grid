@@ -2,17 +2,18 @@
 Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata. */
 
-const fieldForm = document.getElementById('form');
-const boxes = document.getElementsByClassName('box');
-//console.log(fieldForm);
+const container = document.querySelector('.container');
+const button = document.getElementById('generate');
+let boxes = [];
+//console.log(container);
 
 
 
 
-fieldForm.addEventListener('submit', (event)=>{
-    event.preventDefault();
-    if(!fieldForm.classList.contains('generated')){
-        generateGrid(100, fieldForm);
+button.addEventListener('click', ()=>{
+    if(!container.classList.contains('generated')){
+        generateGrid(100, container);
+        boxes = document.querySelectorAll('.box');
         generateNumbersWidth(boxes, 10);
     }
     

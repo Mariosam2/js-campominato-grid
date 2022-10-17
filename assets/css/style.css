@@ -23,13 +23,10 @@ body {
     width: 80%;
     max-width: 1320px;
     margin: 0 auto;
-}
-
-#form {
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem;
 }
+
 
 .box {
     color: white;
@@ -39,13 +36,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 20%;
 }
 
 .box.clicked {
     background-color: var(--box-click);
 }
 
-#form .generate{
+.generate >* {
+    margin: 0 1rem;
+}
+
+ .generate{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,17 +55,22 @@ body {
     padding: 2rem 1rem;
 }
 
-#form .generate input[type="submit"]{
-    color: white;
-    font-size: 2rem;
-    padding: 0.5rem 1.5rem;
-    border-radius: 1rem;
+#generate {
     background-color: var(--xanadu);
     border-color: var(--turquoise-green);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-size: 2rem;
     border-style: solid;
+    border-radius: 1rem;
 }
 
-.box:hover, #form .generate input[type="submit"]:hover {
+
+
+
+.box:hover{
     cursor: pointer;
 }
+
+
 
